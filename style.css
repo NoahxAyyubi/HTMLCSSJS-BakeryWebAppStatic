@@ -1,0 +1,215 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Menu Dropdown */
+.menu {
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 50;
+}
+
+.menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-link {
+    display: block;
+    color: #1f2937;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+}
+
+.menu-link:hover {
+    color: #f97316;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 4rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.product-button:hover {
+    background: #2563eb;
+}
+
+.product-button:active {
+    background: #1d4ed8;
+}
+
+.product-image {
+    width: 100%;
+    height: 12rem;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    .title {
+        font-size: 1.875rem;
+    }
+    .product-image {
+        height: 10rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    animation: fadeIn 0.6s ease-out;
+}
+.product-grid {
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+.footer {
+    animation: fadeIn 0.6s ease-out 0.4s both;
+}
