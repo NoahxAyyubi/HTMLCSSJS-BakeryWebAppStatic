@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Bakery App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <div class="menu" id="menu">
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="#" class="menu-link">About</a>
+        <a href="contact.html" class="menu-link">Contact</a>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Contact Us</h1>
+            <p class="subtitle">We’d love to hear from you</p>
+        </header>
+
+        <section class="contact-card">
+            <form class="contact-form">
+                <label>
+                    Name
+                    <input type="text" placeholder="Your name" required>
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" placeholder="your@email.com" required>
+                </label>
+
+                <label>
+                    Phone Number
+                    <input type="tel" placeholder="(555) 123-4567">
+                </label>
+
+                <label>
+                    Reason for Contact
+                    <select required>
+                        <option value="" disabled selected>Select a reason</option>
+                        <option>General Question</option>
+                        <option>Order Issue</option>
+                        <option>Custom Cake Request</option>
+                        <option>Feedback</option>
+                        <option>Website Issue</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Message
+                    <textarea rows="4" placeholder="Your message" required></textarea>
+                </label>
+
+                <button type="submit" class="product-button">
+                    Send Message
+                </button>
+            </form>
+        </section>
+
+        <footer class="footer">
+            <p>All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
