@@ -15,9 +15,11 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1024px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* Hamburger Menu */
@@ -110,11 +112,11 @@ body {
 /* Product Grid */
 .product-grid {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
     width: 100%;
-    max-width: 600px;
+    
     margin-bottom: 4rem;
 }
 
