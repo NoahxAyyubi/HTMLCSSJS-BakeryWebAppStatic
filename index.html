@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header-nav" style="display: flex; justify-content: center; gap: 30px; padding: 1rem 0; border-bottom: 1px solid #ccc;">
+        <a href="#" class="menu-link">Home</a>
+        <a href="about.html" class="menu-link">About</a>
+        <a href="product.html" class="menu-link">Products</a>
+        <a href="contact.html" class="menu-link">Contact</a>
+    </header>
+
     <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -15,8 +22,9 @@
 
     <div class="menu" id="menu">
         <a href="#" class="menu-link">Home</a>
-        <a href="#" class="menu-link">About</a>
+        <a href="about.html" class="menu-link">About</a>
         <a href="contact.html" class="menu-link">Contact</a>
+        <a href="product.html" class="menu-link">Products</a>
     </div>
 
     <div class="container">
@@ -25,23 +33,48 @@
             <p class="subtitle">Select a category to explore more</p>
         </header>
 
-        <section class="product-grid">
+        <section class="product-grid" style="display: flex; gap: 20px; align-items: flex-start;">
             <div class="product-card">
-                <div class="product-image">Image Placeholder</div>
+                <img src="https://static01.nyt.com/images/2024/12/05/multimedia/SS-Chocolate-Banana-Muffins-jfvl/SS-Chocolate-Banana-Muffins-jfvl-jumbo.jpg?quality=75&auto=webp" alt="Muffins" class="product-image">
                 <button class="product-button" data-category="Muffins">Muffins</button>
             </div>
             <div class="product-card">
-                <div class="product-image">Image Placeholder</div>
+                <img src="https://bakewithzoha.com/wp-content/uploads/2023/09/biscoff-tiramisu-cups-3-1152x1536.jpg" alt="Biscuits" class="product-image">
                 <button class="product-button" data-category="Biscuits">Biscuits</button>
             </div>
-          
+            <div class="product-card">
+                <img src="https://glutenfreeonashoestring.com/wp-content/uploads/2025/05/Gluten-free-cheesecake-1.jpg" alt="Cheesecake" class="product-image">
+                <button class="product-button" data-category="Cheesecake">Cheesecake</button>
+            </div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" style="position: relative;">
             <p> All rights reserved.</p>
+            <a href="https://www.instagram.com/brownbuttertwists/" target="_blank" rel="noopener noreferrer" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
         </footer>
     </div>
 
+    <div id="orderModal" style="display:none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background: white; padding: 20px; border-radius: 8px; width: 300px; position: relative;">
+            <button id="closeModalBtn" style="position: absolute; top: 10px; right: 10px; font-size: 1.2rem; background: none; border: none; cursor: pointer;">&times;</button>
+            <h2>Order Form</h2>
+            <form id="orderForm">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px;"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px;"><br>
+                <label for="number">Number:</label><br>
+                <input type="tel" id="number" name="number" required style="width: 100%; margin-bottom: 10px;"><br>
+                <label for="orderDate">Order Date:</label><br>
+                <input type="date" id="orderDate" name="orderDate" required style="width: 100%; margin-bottom: 15px;"><br>
+                <button type="submit" style="width: 100%;">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    
 </body>
 </html>
